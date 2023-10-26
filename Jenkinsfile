@@ -12,7 +12,7 @@ pipeline {
          stage('list all') {
             steps {
                 // Zip the code in the current directory
-                sh 'ls'
+                sh 'cd ..  ls'
             }
         } 
         stage('Zip Code') {
