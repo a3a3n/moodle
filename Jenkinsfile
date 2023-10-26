@@ -9,12 +9,18 @@ pipeline {
             }
         }
         
-         stage('list all') {
+         stage('back') {
             steps {
                 // Zip the code in the current directory
-                sh 'cd ..  ls'
+                sh 'cd ..  '
             }
         } 
+	  stage('list all') {
+            steps {
+                // Zip the code in the current directory
+                sh 'ls'
+            }
+        }
         stage('Zip Code') {
             steps {
                 // Zip the code in the current directory
