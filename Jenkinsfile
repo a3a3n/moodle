@@ -19,7 +19,7 @@ pipeline {
         stage('Upload to GCR') {
             steps {
                 // Use GCP credentials to upload the code to GCR
-                withCredentials([file(credentialsId: 'directed-will-398304-1e6ff174d5be.json', variable: 'GCP_CREDENTIALS')]) {
+                withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
                     sh 'gsutil cp moodle_app.zip gs://jenkins_1/moodle_app.zip'
                 }
             }
