@@ -32,10 +32,10 @@ pipeline {
                     script {
                         sh '''
                             # SSH into your VM
-                            ssh user@your-vm-ip
+                            gcloud compute ssh moodle-test --zone=asia-south1-c
 
                             # Download and unzip the code from GCR
-                            gsutil cp gs://your-gcr-bucket/moodle_app.zip /path/to/vm/directory/
+                            gsutil cp gs://jenkins_1/moodle_app.zip /home/anantharamachandranb
                             unzip -u /path/to/vm/directory/moodle_app.zip -d /path/to/vm/directory/
 
                             # Implement custom logic to replace changed files
