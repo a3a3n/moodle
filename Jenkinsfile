@@ -9,12 +9,12 @@ pipeline {
             }
         }
         
-        stage('Zip Code') {
-            steps {
-                // Zip the code in the current directory
-                sh 'zip -r moodle_app.zip .'
-            }
-        }
+        // stage('Zip Code') {
+        //     steps {
+        //         // Zip the code in the current directory
+        //         sh 'zip -r moodle_app.zip .'
+        //     }
+        // }
 
         stage('Upload to GCR') {
             steps {
