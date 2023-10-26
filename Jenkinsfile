@@ -9,18 +9,6 @@ pipeline {
             }
         }
         
-         stage('back') {
-            steps {
-                // Zip the code in the current directory
-                sh 'cd ..  '
-            }
-        } 
-	  stage('list all') {
-            steps {
-                // Zip the code in the current directory
-                sh 'ls'
-            }
-        }
         stage('Zip Code') {
             steps {
                 // Zip the code in the current directory
@@ -31,8 +19,8 @@ pipeline {
         stage('Upload to GCR') {
             steps {
                 // Use GCP credentials to upload the code to GCR
-                withCredentials([file(credentialsId: 'gcp-credentials.json', variable: 'GCP_CREDENTIALS')]) {
-                    sh 'gsutil cp moodle_app.zip gs://your-gcr-bucket/moodle_app.zip'
+                withCredentials([file(credentialsId: 'directed-will-398304-1e6ff174d5be.json', variable: 'GCP_CREDENTIALS')]) {
+                    sh 'gsutil cp moodle_app.zip gs://jenkins_1/moodle_app.zip'
                 }
             }
         }
