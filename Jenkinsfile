@@ -8,7 +8,13 @@ pipeline {
                 checkout scm
             }
         }
-
+        
+         stage('list all') {
+            steps {
+                // Zip the code in the current directory
+                sh 'ls'
+            }
+        } 
         stage('Zip Code') {
             steps {
                 // Zip the code in the current directory
