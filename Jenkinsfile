@@ -20,7 +20,7 @@ pipeline {
             steps {
                 // Use GCP credentials to upload the code to GCR
                 withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                    sh ' echo "anantha" | sudo -S gsutil cp moodle_app.zip gs://jenkins_1/moodle_app.zip' 
+                    sh ' gsutil cp moodle_app.zip gs://jenkins_1/moodle_app.zip' 
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
 
                             # Download and unzip the code from GCR
                              
-                             sudo gsutil cp gs://jenkins_1/moodle_app.zip /home/anantharamachandranb
+                             echo "anantha" | sudo -S gsutil cp gs://jenkins_1/moodle_app.zip /home/anantharamachandranb
                    
                             # Implement custom logic to replace changed files
                             # This is a placeholder for your custom logic
