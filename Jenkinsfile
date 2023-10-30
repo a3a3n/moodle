@@ -36,7 +36,11 @@ pipeline {
                             # Download and unzip the code from GCR
                              # sudo chmod u+w /home/anantharamachandranb
                               pwd
+                              cd /home/anantharamachandranb
+                              ls
                               gsutil cp gs://jenkins_1/moodle_app.zip ./
+
+                           
                    
                             # Implement custom logic to replace changed files
                             # This is a placeholder for your custom logic
