@@ -32,6 +32,9 @@ pipeline {
                         sh '''
                             # SSH into your VM
                               gcloud compute ssh moodle-test --zone=asia-south1-c
+
+                              gcloud compute instances list
+
                             
                         '''
                     }
@@ -43,9 +46,7 @@ pipeline {
           
                     script {
                         sh '''
-                            # SSH into your VM
-                              sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c
-                              echo "anantha"
+                          
                             # Download and unzip the code from GCR
                              
                               gsutil cp gs://jenkins_1/moodle_app.zip ./
