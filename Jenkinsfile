@@ -31,11 +31,8 @@ pipeline {
                     script {
                         sh '''
                             # SSH into your VM
-                              sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c
-                              echo "anantha"
-                            # Implement custom logic to replace changed files
-                            # This is a placeholder for your custom logic
-                            # You can compare and replace only changed files here
+                              gcloud compute ssh moodle-test --zone=asia-south1-c
+                            
                         '''
                     }
                 
