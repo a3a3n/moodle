@@ -25,6 +25,22 @@ pipeline {
             }
         }
 
+                stage('SSH INTO THE VM') {
+            steps {
+          
+                    script {
+                        sh '''
+                            # SSH into your VM
+                              sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c
+                              echo "anantha"
+                            # Implement custom logic to replace changed files
+                            # This is a placeholder for your custom logic
+                            # You can compare and replace only changed files here
+                        '''
+                    }
+                
+            }
+        }
         stage('Deploy to VM') {
             steps {
           
@@ -34,10 +50,7 @@ pipeline {
                               sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c
                               echo "anantha"
                             # Download and unzip the code from GCR
-                             # sudo chmod u+w /home/anantharamachandranb
-                              pwd
-                              cd /home/anantharamachandranb
-                              ls
+                             
                               gsutil cp gs://jenkins_1/moodle_app.zip ./
 
                            
