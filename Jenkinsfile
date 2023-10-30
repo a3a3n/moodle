@@ -31,7 +31,7 @@ pipeline {
                     script {
                         sh '''
                             # SSH into your VM
-                              sudo -s gcloud compute ssh moodle-test --zone=asia-south1-c
+                              sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c
                             # Download and unzip the code from GCR
                              # sudo chmod u+w /home/anantharamachandranb
                               pwd
