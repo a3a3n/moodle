@@ -31,7 +31,7 @@ pipeline {
                     script {
                         sh '''
                             # SSH into your VM
-                              gcloud compute ssh moodle-test --zone=asia-south1-c --ssh-flag="-t"
+                              gcloud compute ssh moodle-test --zone=asia-south1-c 
                         
                               hostname
                               pwd
