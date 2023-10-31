@@ -51,6 +51,7 @@ pipeline {
                             # Download and unzip the code from GCR
                              
                               gsutil cp gs://jenkins_1/moodle_app.zip ./
+                              pwd
 
                            
                    
