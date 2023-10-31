@@ -25,20 +25,7 @@ pipeline {
             }
         }
 
-                stage('SSH INTO THE VM') {
-            steps {
-          
-                  script {
-                        sh '''
-                            # SSH into your VM
-                              gcloud compute ssh moodle-test --zone=asia-south1-c << EOF
-                              pwd
-                              EOF
-                        '''
-                    }
-                
-            }
-        }
+            
           stage('SSH to Target Instance') {
             steps {
                 script {
@@ -51,6 +38,20 @@ pipeline {
                     proc << "echo\n"
                     proc.waitFor()
                 }
+            }
+        }
+            stage('SSH INTO THE VM') {
+            steps {
+          
+                  script {
+                        sh '''
+                            # SSH into your VM
+                              gcloud compute ssh moodle-test --zone=asia-south1-c << EOF
+                              pwd
+                              EOF
+                        '''
+                    }
+                
             }
         }
         stage('Deploy to VM') {
