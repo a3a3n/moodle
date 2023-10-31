@@ -31,8 +31,10 @@ pipeline {
                     script {
                         sh '''
                             # SSH into your VM
-                              gcloud compute ssh moodle-test --zone=asia-south1-c
+                              gcloud compute ssh moodle-test --zone=asia-south1-c --ssh-flag="-t"
+                        
                               hostname
+                              pwd
 
                             
 
@@ -52,8 +54,8 @@ pipeline {
                              
                               gsutil cp gs://jenkins_1/moodle_app.zip ./
                               pwd
-                              gcloud compute ssh moodle-test --zone=asia-south1-c --ssh-flag="-t"
-                              pwd
+                             
+                              
 
 
                            
