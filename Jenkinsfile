@@ -29,12 +29,12 @@ pipeline {
           stage('SSH to Target Instance') {
             steps {
                 script {
-                    def cmd = """
+            
                         gcloud compute ssh moodle-test --zone=asia-south1-c
-                    """
-                    def proc = cmd.execute()
+                
                     
-                    // Input to keep the SSH session interactive
+                    
+                   
                     proc << "echo\n"
                     proc.waitFor()
                 }
