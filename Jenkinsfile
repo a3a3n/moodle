@@ -32,8 +32,10 @@ pipeline {
           
                   script {
                         sh '''
-                              gcloud compute ssh --zone "asia-south1-c" "moodle-test" --project "directed-will-398304" -T
-                              sudo -s
+                              #gcloud compute ssh --zone "asia-south1-c" "moodle-test" --project "directed-will-398304" -T
+                              #sudo -s
+                              gcloud compute ssh moodle-test --zone=asia-south1-c --command sudo -s
+
                               pwd
                               
                         '''
