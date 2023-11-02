@@ -34,6 +34,7 @@ pipeline {
                         sh '''
                             # SSH into your VM
                               gcloud compute ssh moodle-test --zone=asia-south1-c << EOF
+                              sudo -s
                               pwd
                               
                         '''
