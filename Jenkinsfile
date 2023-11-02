@@ -32,11 +32,7 @@ pipeline {
           
                   script {
                         sh '''
-                            # SSH into your VM
-                              #sudo -s
-                              #gcloud compute ssh --zone "asia-south1-c" "moodle-test" --project "directed-will-398304"
-
-                              sudo -S gcloud compute ssh --zone "asia-south1-c" "moodle-test" --project "directed-will-398304"
+                              gcloud compute ssh --zone "asia-south1-c" "moodle-test" --project "directed-will-398304" -T
                               sudo -s
                               pwd
                               
