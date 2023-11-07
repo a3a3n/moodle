@@ -33,7 +33,9 @@ pipeline {
                   script {
                         sh '''
                             
-                              gcloud compute ssh moodle-test  --zone=asia-south1-c -t --command="pwd"
+                              #gcloud compute ssh moodle-test  --zone=asia-south1-c -t --command="pwd"
+                              gcloud compute ssh moodle-test --zone=asia-south1-c --command "bash -c 'pwd'"
+
 
                               
                               
