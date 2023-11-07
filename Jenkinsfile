@@ -33,7 +33,7 @@ pipeline {
                   script {
                         sh '''
                             
-                              gcloud compute ssh moodle-test --zone=asia-south1-c --tunnel-through-iap
+                              gcloud compute ssh -t -t moodle-test --zone=asia-south1-c --tunnel-through-iap
 
                               pwd
                               
