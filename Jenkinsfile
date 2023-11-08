@@ -49,9 +49,10 @@ pipeline {
                 script {
                     // Replace with your SSH command
                     def sshCommand = 'ssh -v -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195'
+                    def sshCommandd = 'ssh -i /home/anantharamachandranb/.ssh/new_key -o StrictHostKeyChecking=no anantharamachandranb@34.100.238.195'
 
                     // Start an SSH session
-                    sh(script: sshCommand, returnStatus: true)
+                    sh(script: sshCommandd, returnStatus: true)
 
                     // You can run additional commands in the remote shell session
                     sh(script: 'ls -l', returnStatus: true)
