@@ -34,7 +34,7 @@ pipeline {
                               
                               #gcloud compute ssh instance-1 --zone=asia-south1-a
                               # ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195
-                              gcloud compute scp --project=directed-will-398304 --zone=asia-south1-c anantharamachandranb@moodle-test
+                              
                               
                               
                         '''
@@ -42,6 +42,28 @@ pipeline {
                 
             }
         }
+
+    stages {
+        stage('Interactive SSH Session') {
+            steps {
+                script {
+                    // Replace with your SSH command
+                    def sshCommand = 'ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195'
+
+                    // Start an SSH session
+                    sh(script: sshCommand, returnStatus: true)
+
+                    // You can run additional commands in the remote shell session
+                    sh(script: 'ls -l', returnStatus: true)
+
+                    // Close the SSH session
+                    sh(script: 'exit', returnStatus: true)
+                }
+            }
+        }
+    }
+
+
      
         stage('Deploy to VM') {
             steps {
