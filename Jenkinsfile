@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     // Replace with your SSH command
-                    def sshCommand = 'ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195'
+                    def sshCommand = 'ssh -v -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195'
 
                     // Start an SSH session
                     sh(script: sshCommand, returnStatus: true)
