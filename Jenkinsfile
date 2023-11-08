@@ -40,6 +40,24 @@ pipeline {
                 
             }
         }
+        stage('SSH Interactive Shell') {
+            steps {
+                script {
+                    // Define the SSH command and its parameters
+                    def sshCommand = "ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195"
+                    
+                    // Start the SSH session with 'expect' and spawn a shell
+                    def child = sh(script: "expect -c \"spawn ${sshCommand}; expect {assword: {send \"your_password\\r\"; interact;}\"}\"", returnStatus: true)
+                    
+                    // Check the return status of the SSH session
+                    if (child == 0) {
+                        echo "SSH session completed successfully."
+                    } else {
+                        error "SSH session failed with status ${child}"
+                    }
+                }
+            }
+        }
         stage('Deploy to VM') {
             steps {
           
