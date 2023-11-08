@@ -12,7 +12,7 @@ pipeline {
         stage('Zip Code') {
             steps {
                 // Zip the code in the current directory
-                sh 'sudo -s'
+                sh 'echo "anantha" | sudo -s'
                 sh 'zip -r moodle_app.zip .'
             }
         }
