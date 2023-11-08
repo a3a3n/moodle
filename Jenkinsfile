@@ -41,7 +41,7 @@ pipeline {
         stage('ssh-agent'){
             steps{
                 sshagent(['12125f99-21a1-478b-9be3-39e39db5394a']) {
-                    sh 'ssh anantharamachandranb@34.100.238.195'
+                    sh 'ssh -tt anantharamachandranb@34.100.238.195'
                 }
             }
         }
