@@ -12,7 +12,6 @@ pipeline {
         stage('Zip Code') {
             steps {
                 // Zip the code in the current directory
-                sh 'echo "anantha" | sudo -S'
                 sh 'zip -r moodle_app.zip .'
             }
         }
@@ -27,17 +26,13 @@ pipeline {
         }
 
             
-       
             stage('SSH INTO THE VM') {
             steps {
           
                   script {
                         sh '''
-                              sudo -s
+                              
                               gcloud compute ssh moodle-test  --zone=asia-south1-c  
-                              #sudo -S gcloud compute ssh moodle-test --zone=asia-south1-c 
-
-
                               
                               
                         '''
