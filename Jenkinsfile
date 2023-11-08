@@ -43,7 +43,7 @@ pipeline {
             }
         }
 
-    stages {
+    
         stage('Interactive SSH Session') {
             steps {
                 script {
@@ -61,7 +61,7 @@ pipeline {
                 }
             }
         }
-    }
+    
 
 
      
