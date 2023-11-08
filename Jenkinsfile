@@ -33,7 +33,7 @@ pipeline {
                         sh '''
                               
                               #gcloud compute ssh instance-1 --zone=asia-south1-a
-                              ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195
+                              sudo ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195
                               
                               
                         '''
