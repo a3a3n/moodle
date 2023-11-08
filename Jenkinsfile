@@ -32,7 +32,7 @@ pipeline {
                   script {
                         sh '''
                               
-                              gcloud compute ssh moodle-test  --zone=asia-south1-c  
+                              gcloud compute ssh instance-1 --zone=asia-south1-a
                               
                               
                         '''
