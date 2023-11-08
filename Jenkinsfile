@@ -33,7 +33,8 @@ pipeline {
                         sh '''
                               
                               #gcloud compute ssh instance-1 --zone=asia-south1-a
-                              sudo ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195
+                              # ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195
+                              gcloud compute scp --project=directed-will-398304 --zone=asia-south1-c moodle-test
                               
                               
                         '''
