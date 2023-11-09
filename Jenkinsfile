@@ -41,7 +41,7 @@ pipeline {
         stage('ssh-agent'){
             steps{
                 sshagent(['12125f99-21a1-478b-9be3-39e39db5394a']) {
-                    sh 'ssh -tt anantharamachandranb@34.100.238.195'
+                    sh 'ssh -v -tt anantharamachandranb@34.100.238.195'
                     sh ' touch anantha_jenkins.txt'
                     sh ' exit'
                 }
