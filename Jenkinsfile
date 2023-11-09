@@ -41,7 +41,7 @@ pipeline {
         stage('ssh-agent'){
             steps{
                 sshagent(['12125f99-21a1-478b-9be3-39e39db5394a']) {
-                    sh 'ssh -v -tt anantharamachandranb@34.100.238.195 ls'
+                    sh 'ssh -tt anantharamachandranb@34.100.238.195 gsutil cp gs://jenkins_1/moodle_app.zip ./'
                     
                 }
             }
@@ -78,7 +78,7 @@ pipeline {
                           
                             # Download and unzip the code from GCR
                              
-                              gsutil cp gs://jenkins_1/moodle_app.zip ./
+                              #gsutil cp gs://jenkins_1/moodle_app.zip ./
                               pwd
                             
                             # Implement custom logic to replace changed files
