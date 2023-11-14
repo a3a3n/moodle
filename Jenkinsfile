@@ -26,19 +26,19 @@ pipeline {
         }
 
             
-            stage('SSH INTO THE VM') {
-            steps {
+            // stage('SSH INTO THE VM') {
+            // steps {
           
-                  script {
-                        sh '''
-                              #gcloud compute ssh instance-1 --zone=asia-south1-a
-                              # ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195  
-                        '''
-                    }
-                }
-            }
+            //       script {
+            //             sh '''
+            //                   #gcloud compute ssh instance-1 --zone=asia-south1-a
+            //                   # ssh -i /home/anantharamachandranb/.ssh/new_key anantharamachandranb@34.100.238.195  
+            //             '''
+            //         }
+            //     }
+            // }
 
-        stage('ssh-agent'){
+        stage('ssh-agent-into the vm'){
             steps{
                 sshagent(['12125f99-21a1-478b-9be3-39e39db5394a']) {
                     sh 'ssh -tt anantharamachandranb@34.100.238.195 gsutil cp gs://jenkins_1/moodle_app.zip ./'
@@ -70,22 +70,22 @@ pipeline {
 
 
      
-        stage('Deploy to VM') {
-            steps {
+        // stage('Deploy to VM') {
+        //     steps {
           
-                    script {
-                        sh '''
+        //             script {
+        //                 sh '''
                           
-                            # Download and unzip the code from GCR
+        //                     # Download and unzip the code from GCR
                              
-                              #gsutil cp gs://jenkins_1/moodle_app.zip ./
-                              pwd
+        //                       #gsutil cp gs://jenkins_1/moodle_app.zip ./
+        //                       pwd
                             
-                            # Implement custom logic to replace changed files
-                            # This is a placeholder for your custom logic
-                            # You can compare and replace only changed files here
-                        '''
-                    }
+        //                     # Implement custom logic to replace changed files
+        //                     # This is a placeholder for your custom logic
+        //                     # You can compare and replace only changed files here
+        //                 '''
+        //             }
                 
             }
         }
