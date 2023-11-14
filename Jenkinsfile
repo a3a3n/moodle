@@ -21,7 +21,7 @@ pipeline {
                 // Use GCP credentials to upload the code to GCR
                 withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
                     sh ' gsutil cp moodle_app.zip gs://jenkins_1/moodle_app.zip' 
-                    sh ' unzip moodle_app.zip -d /var/www/html'
+                    
                 }
             }
         }
@@ -43,6 +43,7 @@ pipeline {
             steps{
                 sshagent(['12125f99-21a1-478b-9be3-39e39db5394a']) {
                     sh 'ssh -tt anantharamachandranb@34.100.238.195 gsutil cp gs://jenkins_1/moodle_app.zip ./'
+                    sh 'ssh -tt anantharamachandranb@34.100.238.195 unzip moodle_app.zip -d /var/www/html'
                     
                 }
             }
